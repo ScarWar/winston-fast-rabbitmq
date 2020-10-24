@@ -3,9 +3,14 @@
     "tslint:latest"
   ],
   "rules": {
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
     "quotemark": [
       true,
       "single"
-    ]
+    ],
+    "max-classes-per-file": false
   }
 }

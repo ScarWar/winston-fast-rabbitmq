@@ -1,15 +1,15 @@
 {
-  "name": "winston-fast-rabbitmq",
-  "version": "2.2.0",
+  "name": "winston-rabbitmq",
+  "version": "3.0.0-beta1",
   "description": "A RabbitMQ transport for Winston.",
-  "main": "lib/winston-fast-rabbitmq.js",
-  "types": "typings/winston-fast-rabbitmq.d.ts",
+  "main": "src/winston-rabbitmq.ts",
+  "types": "typings/lib/winston-rabbitmq.d.ts",
   "scripts": {
-    "test": "mocha"
+    "test": "ts-mocha -p tsconfig.json test/**/*.ts"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TBear79/winston-fast-rabbitmq"
+    "url": "https://github.com/ScarWar/winston-fast-rabbitmq"
   },
   "keywords": [
     "winston",
@@ -23,20 +23,27 @@
     "error handling",
     "errorhandler"
   ],
-  "author": "Thorbjørn Jelgren",
+  "author": "Ariel Bereslavsky",
   "license": "MIT",
   "dependencies": {
-    "amqplib": "^0.5.1",
+    "amqplib": "^0.6.0",
     "rabbit-chatter": "^2.0.0",
-    "util": "^0.10.3",
-    "winston": "^2.3.1"
+    "util": "^0.12.3",
+    "winston-transport": "^4.4.0"
   },
   "devDependencies": {
-    "@types/winston": "^2.3.3",
-    "chai": "^4.1.0",
-    "mocha": "^3.4.2",
-    "sinon": "^2.3.8",
-    "tslint": "^5.5.0",
-    "typescript": "^2.4.1"
+    "@types/amqplib": "^0.5.14",
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.14.2",
+    "@types/sinon": "^9.0.8",
+    "abstract-winston-transport": "^0.5.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0",
+    "sinon": "^9.2.0",
+    "tslint": "^6.1.3",
+    "ts-mocha": "^7.0.0",
+    "typescript": "^4.0.3",
+    "winston": "^3.3.3"
   }
 }
