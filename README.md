@@ -1,4 +1,7 @@
-# winston-fast-rabbitmq
+# winston-rabbitmq
+
+> This is a typescript port of [winston-fast-rabbitmq
+](https://github.com/TBear79/winston-fast-rabbitmq) to `winston 3.x`
 
 A RabbitMQ transport for Winston. 
 
@@ -13,26 +16,27 @@ It closes the connection after every message, but keeps the connection open as l
 Use [npm](https://www.npmjs.com/) to install the module:
 
 ```
-	npm install winston-fast-rabbitmq
+	npm install winston-rabbitmq
 ```
 
-Then use `require()` to load it in your code:
+Then use `import` to load it in your code:
 
 ```javascript
-	var winstonFastRabbitMq = require('winston-fast-rabbitmq');
+    import { RabbitMQTransport } from 'winston-rabbitmq';
 ```
 
 Setup the transport in winston:
 
 ```javascript
-	winston.add(winstonFastRabbitMq, options);
+	winston.add(new RabbitMQTransport(options));
 ```
 
-Now you are ready to send some logs to RabbitMq!
+Now you are ready to send some logs to RabbitMQ!
 
 ## Options
 
-Most options are passed on directly to [rabbit-chatter](https://www.npmjs.com/package/rabbit-chatter). So have a look at that module to see the rest of the option list.
+Most options are passed on directly to [rabbit-chatter](https://www.npmjs.com/package/rabbit-chatter). So have a look at 
+that module to see the rest of the option list.
 
 ### level
 
@@ -42,38 +46,12 @@ Default: 'info'
 
 Sets the minimum required level for sending the log to RabbitMQ. You can find the levels [here](https://www.npmjs.com/package/winston#logging-levels).
 
-### formatter
-
-function
-
-Default: See below
-
-Sets the standard formatter for the message. If no function is passed in this option, it will use the default-formatter which looks like this:
-
-For versions: `<=1.2.4`
-```javascript
-function(level, meta, message)
-{
-    return JSON.stringify({ level: level, meta: meta, message: message  });
-};
-```
-
-For versions: `>1.2.4`
-```javascript
-function(options)
-{
-    return JSON.stringify({ level: options.level, meta: options.meta, message: options.message  });
-};
-```
-Thanks to Thomas from ebuildy for this contribution :-)
-
-
 # Tests
 
 To run tests on this module, make sure that the modules for the tests are installed
 
 ```
-	npm install winston-fast-rabbitmq --dev
+	npm install winston-rabbitmq --dev
 ```
 
 Then run:
@@ -84,7 +62,7 @@ Then run:
 
 NOTICE: The test is not only a unit test but also a functionality test. So RabbitMQ is required to be installed locally in order to run the test.
 
-# Futher reading
+# Further reading
 
 Further documentation the topics according to this module:
 
@@ -95,6 +73,7 @@ Further documentation the topics according to this module:
 
 # Release notes
 
+* 3.0.0-beta1 - Updated dependencies, including winston, mocha, 
 * 2.2.0 - Updated dependencies, including rabbit-chatter v2 that fixes an issue that left open connections.
 * 2.1.0 - Ability to pass timeout to rabbit-chatter
 * 2.0.2 - IMPORTANT! Renamed transport property from `WinstonInstanceRabbitMq` to `WinstonFastRabbitmq` in types.
@@ -121,7 +100,7 @@ Further documentation the topics according to this module:
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Thorbjørn Gliese Jelgren (The Right Foot, www.therightfoot.dk)
+Copyright (c) Ariel Bereslavsky
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -2,7 +2,7 @@
   "name": "winston-rabbitmq",
   "version": "3.0.0-beta1",
   "description": "A RabbitMQ transport for Winston.",
-  "main": "src/winston-rabbitmq.ts",
+  "main": "src/winston-rabbitmq.js",
   "types": "typings/lib/winston-rabbitmq.d.ts",
   "scripts": {
     "test": "ts-mocha -p tsconfig.json test/**/*.ts"
@@ -28,7 +28,6 @@
   "dependencies": {
     "amqplib": "^0.6.0",
     "rabbit-chatter": "^2.0.0",
-    "util": "^0.12.3",
     "winston-transport": "^4.4.0"
   },
   "devDependencies": {
