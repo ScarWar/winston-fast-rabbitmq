@@ -16,7 +16,7 @@ It closes the connection after every message, but keeps the connection open as l
 Use [npm](https://www.npmjs.com/) to install the module:
 
 ```
-	npm install winston-rabbitmq
+	npm install @scarwar/winston-rabbitmq
 ```
 
 Then use `import` to load it in your code:
@@ -48,10 +48,10 @@ Sets the minimum required level for sending the log to RabbitMQ. You can find th
 
 # Tests
 
-To run tests on this module, make sure that the modules for the tests are installed
+To run tests on this module, make sure the modules for the tests are installed
 
 ```
-	npm install winston-rabbitmq --dev
+	npm install @scarwar/winston-rabbitmq --dev
 ```
 
 Then run:
@@ -73,7 +73,7 @@ Further documentation the topics according to this module:
 
 # Release notes
 
-* 3.0.0-beta1 - Updated dependencies, including winston, mocha, 
+* 3.0.0-beta1 - Updated dependencies, including winston, mocha, and more
 * 2.2.0 - Updated dependencies, including rabbit-chatter v2 that fixes an issue that left open connections.
 * 2.1.0 - Ability to pass timeout to rabbit-chatter
 * 2.0.2 - IMPORTANT! Renamed transport property from `WinstonInstanceRabbitMq` to `WinstonFastRabbitmq` in types.
