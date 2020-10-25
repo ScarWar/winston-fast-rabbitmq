@@ -1,5 +1,5 @@
 {
-  "name": "winston-rabbitmq",
+  "name": "@scarwar/winston-rabbitmq",
   "version": "3.0.0-beta2",
   "description": "A RabbitMQ transport for Winston.",
   "main": "src/winston-rabbitmq.js",
